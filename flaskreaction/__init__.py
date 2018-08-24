@@ -7,7 +7,6 @@ from flask_ckeditor import CKEditor
 from flaskreaction.config import Config
 
 
-
 db = SQLAlchemy()
 bcrypt = Bcrypt()
 login_manager = LoginManager()
@@ -30,8 +29,11 @@ def create_app(config_class=Config):
     from flaskreaction.users.routes import users
     from flaskreaction.posts.routes import posts
     from flaskreaction.main.routes import main
+    from flaskreaction.errors.handlers import errors
+
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
+    app.register_blueprint(errors)
 
     return app

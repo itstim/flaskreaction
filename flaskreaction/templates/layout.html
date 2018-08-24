@@ -12,13 +12,10 @@
 
     <!-- FontAwesome JS-->
     <script defer src="https://use.fontawesome.com/releases/v5.1.1/js/all.js" integrity="sha384-BtvRZcyfv4r0x/phJt9Y9HhnN5ur1Z+kZbKVgzVBAlQZX4jvAuImlIz+bG7TS00a" crossorigin="anonymous"></script>
-
-    <!-- Theme CSS -->
-    <link id="theme-style" rel="stylesheet" href="{{url_for('static',filename='css/main1.css')}}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!-- Main CSS -->
-    <link rel="stylesheet" type=text/css href="{{url_for('static',filename='css/main2.css')}}">
+    <link rel="stylesheet" type=text/css href="{{url_for('static',filename='css/main.css')}}">
 
 
     {% if title %}
@@ -32,7 +29,7 @@
     <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/">WTD?</a>
+          <a class="navbar-brand mr-4" href="/">RIL</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -46,16 +43,16 @@
             <div class="navbar-nav">
               {% if current_user.is_authenticated %}
                 {% if request.path == "/blog" or request.path == "/post/new"  %}
-                <a class="nav-item nav-link" href="{{url_for('users.account')}}">Account</a>
-                <a class="nav-item nav-link" href="{{url_for('users.logout')}}">Logout</a>
+                <a class="nav-item nav-link" href="{{url_for('users.account')}}"><i class="fas fa-user-cog"></i>  Account</a>
+                <a class="nav-item nav-link" href="{{url_for('users.logout')}}"><i class="fas fa-walking"></i>  Logout</a>
                 {% else %}
-                <a class="nav-item nav-link" href="{{url_for('posts.new_post')}}">New Post</a>
-                <a class="nav-item nav-link" href="{{url_for('users.account')}}">Account</a>
-                <a class="nav-item nav-link" href="{{url_for('users.logout')}}">Logout</a>
+                <a class="nav-item nav-link" href="{{url_for('posts.new_post')}}"><i class="far fa-plus-square"></i>  New Post</a>
+                <a class="nav-item nav-link" href="{{url_for('users.account')}}"><i class="fas fa-user-cog"></i>  Account</a>
+                <a class="nav-item nav-link" href="{{url_for('users.logout')}}"><i class="fas fa-walking"></i>  Logout</a>
                 {% endif %}
               {% else %}
-                <a class="nav-item nav-link" href="{{url_for('users.login')}}">Login</a>
-                <a class="nav-item nav-link" href="{{url_for('users.register')}}">Register</a>
+                <a class="nav-item nav-link" href="{{url_for('users.login')}}"><i class="fas fa-user-check"></i>  Login</a>
+                <a class="nav-item nav-link" href="{{url_for('users.register')}}"><i class="fas fa-user-plus"></i>  Register</a>
               {% endif %}
             </div>
           </div>
@@ -64,7 +61,7 @@
     </header>
     <main role="main" class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
           {% with messages = get_flashed_messages(with_categories= true) %}
             {% if messages %}
               {% for category, message in messages %}
@@ -74,10 +71,18 @@
               {% endfor %}
             {% endif %}
           {% endwith %}
+          <div>
+
+          </div>
           {% block content %}{% endblock %}
         </div>
+      </div>
     </main>
   </body>
+      <!--wtfscript-->
+      <script>var scale = Math.min( availableWidth / contentWidth,
+                                    availableHeight / contentHeight );
+      </script>
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
