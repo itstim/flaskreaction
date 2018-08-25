@@ -1,13 +1,43 @@
+html {
+  font-size: 16px;
+}
+
 body {
-  background: #fafafa;
-  color: #333333;
+  font-family: 'Roboto', sans-serif;
+  background: #F7F8FA;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #434E5E;
   margin-top: 5rem;
 }
 
-h1,h2, h3, h4, h5, h6 {
-  color: #262228;
+.theme-bg-primary {
+  background-color: #434E5E;
 }
 
+.theme-bg-primary-darken {
+  background-color: #191d22;
+}
+
+a.theme-btn-on-bg, .theme-btn-on-bg {
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border: none;
+}
+
+a.theme-btn-on-bg:hover, a.theme-btn-on-bg:focus, a.theme-btn-on-bg:active, .theme-btn-on-bg:hover, .theme-btn-on-bg:focus, .theme-btn-on-bg:active {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: transparent;
+  border: none;
+}
+
+.progress {
+  border-radius: 2px;
+}
+
+.theme-progress-bar-dark {
+  background-color: #434E5E;
+}
 
 .bg-steel {
   background-color:  #0b0b0c;
@@ -267,7 +297,7 @@ a.article-title:hover {
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 767.98px) {
   .resume-wrapper {
     padding-top: 0;
   }
@@ -278,9 +308,11 @@ a.article-title:hover {
     width: 120px;
     border-radius: 4px;
   }
-  .content_section
-  {
-    transform:scale()
-    word-wrap: break-all;
-  }
+}
+
+.site-header .navbar{
+  background-color: #0b0b0c;
+}
+.site-header .navbar .navbar-brand{
+  font-family: "Ubuntu";
 }
